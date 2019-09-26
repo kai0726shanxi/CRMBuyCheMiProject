@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.activity.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_head"
+        android:layout_width="@dimen/dp_52"
+        android:layout_height="@dimen/dp_52"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@mipmap/dialog_add_bg"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/dp_50"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/iv_head"
+        app:layout_constraintRight_toRightOf="@+id/iv_head"
+        app:layout_constraintTop_toTopOf="@+id/iv_head"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_head"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:text=""/>
+</android.support.constraint.ConstraintLayout>

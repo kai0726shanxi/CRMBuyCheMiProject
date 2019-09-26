@@ -66,33 +66,7 @@
 
             />
 
-        <com.chaychan.library.BottomBarItem
 
-            android:layout_width="0dp"
-
-            android:layout_height="match_parent"
-
-            android:layout_weight="1"
-
-            app:iconNormal="@mipmap/icon_news_normal"
-
-            app:iconSelected="@mipmap/icon_news_down"
-
-            app:itemMarginTop="@dimen/dp_5"
-
-            app:itemText="发现"
-
-            app:itemTextSize="@dimen/sp_10"
-
-            app:openTouchBg="true"
-
-            app:textColorNormal="@color/btm_navigation_bar_home_unselected_color"
-
-            app:textColorSelected="@color/home_bottom_down"
-
-            app:touchDrawable="@color/transparent"
-
-            />
 
         <com.chaychan.library.BottomBarItem
 
@@ -108,33 +82,6 @@
             app:touchDrawable="@color/transparent"
             app:itemTextSize="0.5sp"
             />
-
-        <com.chaychan.library.BottomBarItem
-
-            android:layout_width="0dp"
-
-            android:layout_height="match_parent"
-
-            android:layout_weight="1"
-
-            app:iconNormal="@mipmap/icon_order_normal"
-
-            app:iconSelected="@mipmap/icon_order_down"
-
-            app:itemMarginTop="@dimen/dp_5"
-
-            app:itemText="通知"
-            app:itemTextSize="@dimen/sp_10"
-            app:openTouchBg="true"
-            app:textColorNormal="@color/btm_navigation_bar_home_unselected_color"
-
-            app:textColorSelected="@color/home_bottom_down"
-
-            app:touchDrawable="@color/transparent"
-
-            />
-
-
         <com.chaychan.library.BottomBarItem
 
             android:layout_width="0dp"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">百料学院</string>
+    <string name="app_name">CRM系统</string>
 
     <string name="video_offline">缓存</string>
     <string name="video_attention">+ 关注</string>
@@ -49,6 +49,7 @@
     <string name="share_copy">复制连接</string>
     <string name="share_QR">二维码</string>
     <string name="share_report">举报</string>
+    <string name="str_shearch_hint">请输入关键字</string>
 
 
 </resources>

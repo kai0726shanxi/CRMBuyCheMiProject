@@ -49,116 +49,69 @@
 
             />
         <activity
-            android:name=".ui.activity.add.IsVisibleActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            />
-
-        <activity
-            android:name=".ui.activity.add.HomeAddActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.me.SettingActivity"
+            android:name=".ui.activity.MyGroupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.LoginActivity"
+            android:name=".ui.activity.MyClientActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.me.AccountSecurityActivity"
+            android:name=".ui.activity.MyLinkManActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.CountryActivity"
+            android:name=".ui.activity.MyClientDetailsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.me.MessageNotificationActivity"
+            android:name=".ui.activity.MyScheduleActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.me.AboutUsActivity"
+            android:name=".ui.activity.NewScheduleActivtity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.me.UserInformationActivity"
+            android:name=".ui.activity.RemindTimeActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.add.ReleaseImageTextActivity"
+            android:name=".ui.activity.GroupSentMessageActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.home.PostDetailsActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan"/>
-        <activity
-            android:name=".ui.activity.add.ChoseForumActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.add.SetAddressActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.add.ReleaseVideoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity
-            android:name=".ui.activity.home.ActivityProjectActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.home.PlayVideoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen" />
-        <activity
-            android:name=".ui.activity.add.ReleaseLongVideoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-
-             />
-        <activity
-            android:name=".ui.activity.manage.NotificationActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.home.AllDynamicActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-
             android:screenOrientation="portrait" />
 
         <activity
-            android:name=".ui.activity.home.SearchForumActivity"
+            android:name=".ui.activity.GroupSentDetailsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.add.ReleasePostActivity"
+            android:name=".ui.activity.FollowUpRecordsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ui.activity.NewFollowUpRecordsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.add.MyReleasePostActivity"
+            android:name=".ui.activity.LogBookActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.PotentialCustomerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MassRecordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.NewLogActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
 
 
-        <provider
-            android:name="android.support.v4.content.FileProvider"
-            android:authorities="${applicationId}.provider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data
-                android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths" />
-        </provider>
     </application>
 
 </manifest>

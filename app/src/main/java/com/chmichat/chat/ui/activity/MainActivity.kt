@@ -1,7 +1,6 @@
 package com.chmichat.chat.ui.activity
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import android.view.KeyEvent
@@ -11,11 +10,11 @@ import com.flyco.tablayout.listener.CustomTabEntity
 import com.chmichat.chat.R
 import com.chmichat.chat.base.BaseActivity
 import com.chmichat.chat.showToast
-import com.chmichat.chat.ui.activity.add.HomeAddActivity
-import com.chmichat.chat.ui.fragment.home.HomeFragment
-import com.chmichat.chat.ui.fragment.mesetting.MeSettingFragment
-import com.chmichat.chat.ui.fragment.discover.DiscoverFragment
-import com.chmichat.chat.ui.fragment.message.MessageListFragment
+import com.chmichat.chat.ui.adapter.AddDialogAdapter
+import com.chmichat.chat.ui.dialog.HomeAddDialog
+import com.chmichat.chat.ui.fragment.HomeFragment
+import com.chmichat.chat.ui.fragment.MeSettingFragment
+import com.chmichat.chat.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -29,19 +28,8 @@ import java.util.*
 
 class MainActivity : BaseActivity() {
     private var iv: ImageView? = null
-
-    private val mTitles = arrayOf("首页", "发现", "", "通知", "我的")
-
-    // 未被选中的图标
-    private val mIconUnSelectIds = intArrayOf(R.mipmap.icon_home_normal, R.mipmap.icon_news_normal, R.mipmap.head_icon, R.mipmap.icon_order_normal, R.mipmap.icon_me_normal)
-    // 被选中的图标
-    private val mIconSelectIds = intArrayOf(R.mipmap.icon_home_down, R.mipmap.icon_news_down, R.mipmap.head_icon, R.mipmap.icon_order_down, R.mipmap.icon_me_down)
-
-    private val mTabEntities = ArrayList<CustomTabEntity>()
-
+    private var mDialog: HomeAddDialog?=null
     private var mHomeFragment: HomeFragment? = null
-    private var mNewsInformationFragment: DiscoverFragment? = null
-    private var mOrderListFragment: MessageListFragment? = null
     private var mMeSettingFragment: MeSettingFragment? = null
 
 
@@ -66,36 +54,18 @@ class MainActivity : BaseActivity() {
 
     //初始化底部菜单
     private fun initTab() {
-        /*(0 until mTitles.size)
-                .mapTo(mTabEntities)
-                { TabEntity(mTitles[it], mIconSelectIds[it], mIconUnSelectIds[it]) }
-        //为Tab赋值
-        tab_layout.setTabData(mTabEntities)
-
-        tab_layout.setOnTabSelectListener(object : OnTabSelectListener {
-            override fun onTabSelect(position: Int) {
-                //切换Fragment
-                switchFragment(position)
-            }
-
-            override fun onTabReselect(position: Int) {
-
-            }
-        })*/
 
         tab_layout!!.setOnItemSelectedListener { _, _, position ->
             when (position) {
                 0 -> switchFragment(0)
-                1 -> switchFragment(1)
-                3 -> switchFragment(3)
-                4 -> switchFragment(4)
+                2 -> switchFragment(2)
+
             }
 
         }
         btn_add.setOnClickListener {
 
-            startActivity(Intent(this, HomeAddActivity::class.java))
-             overridePendingTransition(R.anim.anim_in, R.anim.anim_out)
+            mDialog?.show()
         }
     }
 
@@ -114,22 +84,8 @@ class MainActivity : BaseActivity() {
                 mHomeFragment = it
                 transaction.add(R.id.fl_container, it, "home")
             }
-            1  //资讯
-            -> mNewsInformationFragment?.let {
-                transaction.show(it)
-            } ?: DiscoverFragment.getInstance().let {
-                mNewsInformationFragment = it
-                transaction.add(R.id.fl_container, it, "news")
-            }
 
-            3 //订单
-            -> mOrderListFragment?.let {
-                transaction.show(it)
-            } ?: MessageListFragment.getInstance().let {
-                mOrderListFragment = it
-                transaction.add(R.id.fl_container, it, "order")
-            }
-            4 //我的界面
+            2 //我的界面
             -> mMeSettingFragment?.let {
 
                 transaction.show(it)
@@ -153,8 +109,6 @@ class MainActivity : BaseActivity() {
      */
     private fun hideFragments(transaction: FragmentTransaction) {
         mHomeFragment?.let { transaction.hide(it) }
-        mNewsInformationFragment?.let { transaction.hide(it) }
-        mOrderListFragment?.let { transaction.hide(it) }
         mMeSettingFragment?.let { transaction.hide(it) }
     }
 
@@ -167,6 +121,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun initView() {
+        StatusBarUtil.darkMode(this)
+        mDialog=HomeAddDialog(this)
 
     }
 

@@ -261,6 +261,10 @@
     <color name="displayt">#565758</color>
     <color name="medynamic">#909396</color>
     <color name="namecolor">#222222</color>
+    <color name="dialogbule">#369FFD</color>
+    <color name="dialoggreen">#36B9CD</color>
+    <color name="dialogyellow">#FF892A</color>
+    <color name="dialogpurple">#7B73F1</color>
 
 
 
