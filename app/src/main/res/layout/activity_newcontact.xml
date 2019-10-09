@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.activity.NewContactActivity">
+
+    <include layout="@layout/title_bar_layout" />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="姓名"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_bar" />
+
+    <com.buychemi.crm.view.ClearEditText
+        android:id="@+id/et_name"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:ellipsize="end"
+        android:hint="请输入姓名"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="性别"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+    <TextView
+        android:id="@+id/tv_sex"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:drawableRight="@mipmap/next_ic"
+        android:drawablePadding="@dimen/dp_10"
+        android:hint="请选择"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv2"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="职务"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+    <com.buychemi.crm.view.ClearEditText
+        android:id="@+id/et_position"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:ellipsize="end"
+        android:hint="请输入职位"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="手机号码"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv3" />
+
+    <com.buychemi.crm.view.ClearEditText
+        android:id="@+id/et_phone"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:ellipsize="end"
+        android:hint="请输入手机号"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv4"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="联系电话"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv4" />
+
+    <com.buychemi.crm.view.ClearEditText
+        android:id="@+id/et_Plane"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:ellipsize="end"
+        android:hint="请输入座机号"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv5"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+    <TextView
+        android:id="@+id/tv6"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="电子邮箱"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv5" />
+
+    <com.buychemi.crm.view.ClearEditText
+        android:id="@+id/et_Email"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:ellipsize="end"
+        android:hint="请输入电子邮箱"
+        android:maxLines="1"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintWidth_percent="0.8" />
+
+
+    <TextView
+        android:id="@+id/tv7"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="@dimen/dp_15"
+        android:text="关联客户"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv6" />
+
+    <TextView
+        android:id="@+id/tv_customer"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:drawableRight="@mipmap/next_ic"
+        android:drawablePadding="@dimen/dp_10"
+        android:hint="请选择"
+        android:padding="@dimen/dp_15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv7"
+        app:layout_constraintRight_toRightOf="parent" />
+</android.support.constraint.ConstraintLayout>

@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                <com.chmichat.chat.view.CircleImageView
+                <com.buychemi.crm.view.CircleImageView
                     android:id="@+id/iv_head"
                     android:layout_width="@dimen/dp_50"
                     android:layout_height="@dimen/dp_50"
@@ -61,7 +61,7 @@
                         android:textColor="@color/black"
                         android:text="上海百料汇信息科技"
                         />
-                     <com.chmichat.chat.view.PartColorTextView
+                     <com.buychemi.crm.view.PartColorTextView
                          android:id="@+id/tv1"
                          android:layout_width="@dimen/dp_0"
                          android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
                          android:gravity="center"
 
                          />
-                    <com.chmichat.chat.view.PartColorTextView
+                    <com.buychemi.crm.view.PartColorTextView
                         android:id="@+id/tv2"
                         android:layout_width="@dimen/dp_0"
                          android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                         app:layout_constraintRight_toLeftOf="@+id/tv3"
                         app:layout_constraintLeft_toRightOf="@+id/tv1"
                          />
-                    <com.chmichat.chat.view.PartColorTextView
+                    <com.buychemi.crm.view.PartColorTextView
                         android:id="@+id/tv3"
                          android:layout_width="@dimen/dp_0"
                          android:layout_height="wrap_content"
@@ -107,7 +107,7 @@
                         app:layout_constraintRight_toLeftOf="@+id/tv4"
                         app:layout_constraintLeft_toRightOf="@+id/tv2"
                          />
-                    <com.chmichat.chat.view.PartColorTextView
+                    <com.buychemi.crm.view.PartColorTextView
                         android:id="@+id/tv4"
                          android:layout_width="@dimen/dp_0"
                          android:layout_height="wrap_content"

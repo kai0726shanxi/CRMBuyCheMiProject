@@ -25,7 +25,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_bar_new">
 
-        <com.chmichat.chat.view.CircleImageView
+        <com.buychemi.crm.view.CircleImageView
             android:id="@+id/iv_head"
             android:layout_width="@dimen/dp_60"
             android:layout_height="@dimen/dp_60"
