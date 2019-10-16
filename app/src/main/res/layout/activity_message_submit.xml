@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    tools:context=".ui.activity.FollowUpRecordsActivity">
+
+    <include layout="@layout/title_bar_layout" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_content"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/white"
+        android:padding="@dimen/dp_25"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_bar">
+
+        <ImageView
+            android:id="@+id/ivlog"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="@dimen/dp_60"
+            android:src="@mipmap/success_ic"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="群发提交成功"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_20"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivlog" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:text="您的群发业务已提交，请前往群发记录查看结果"
+            android:textColor="@color/black_text"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv1" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_look"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_50"
+        android:background="@drawable/btn_radius_logout_bg"
+        android:gravity="center"
+        android:text="查看发送记录"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_content"
+        app:layout_constraintWidth_percent="0.8"
+
+
+        />
+
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_38"
+        android:layout_marginTop="@dimen/dp_25"
+        android:background="@drawable/btn_radius_bg"
+        android:gravity="center"
+        android:text="回到首页"
+        android:textColor="#0084FF"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold"
+        android:visibility="visible"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_look"
+        app:layout_constraintWidth_percent="0.8"
+
+        />
+</android.support.constraint.ConstraintLayout>

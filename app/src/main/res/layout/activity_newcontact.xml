@@ -63,7 +63,7 @@
         android:layout_marginTop="@dimen/dp_10"
         android:background="@color/white"
         android:drawableRight="@mipmap/next_ic"
-        android:drawablePadding="@dimen/dp_10"
+        android:drawablePadding="@dimen/dp_5"
         android:hint="请选择"
         android:padding="@dimen/dp_15"
         android:textColor="@color/black"
