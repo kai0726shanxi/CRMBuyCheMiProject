@@ -48,7 +48,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_15"
-            android:text="本次群发手机用户：200人\n本次群发邮件用户：200人"
+            android:text="本次群发手机用户："
             android:textColor="@color/black_text"
             android:textSize="@dimen/sp_12"
             app:layout_constraintLeft_toLeftOf="parent"

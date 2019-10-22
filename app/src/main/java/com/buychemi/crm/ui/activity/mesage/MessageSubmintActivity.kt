@@ -14,30 +14,40 @@ import kotlinx.android.synthetic.main.title_bar_layout.*
  * @Author 20342
  * @Date 2019/10/15 10:15
  */
-class MessageSubmintActivity:BaseActivity(),View.OnClickListener {
+class MessageSubmintActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
-    when(v?.id){
-        R.id.tv_cancel
-        ->{
-            startActivity(Intent(this,MainActivity::class.java))
-        }
+        when (v?.id) {
+            R.id.tv_cancel
+            -> {
+                var intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
+            }
 
-    }
+            R.id.tv_look -> {
+                startActivity(Intent(this, MassRecordActivity::class.java))
+                finish()
+
+            }
+
+        }
     }
 
 
     override fun layoutId(): Int {
-    return R.layout.activity_message_submit
+        return R.layout.activity_message_submit
     }
 
     override fun initData() {
     }
 
     override fun initView() {
-        tv_title.text="群发提交"
+        tv_title.text = "群发提交"
         StatusBarUtil.darkMode(this)
-        StatusBarUtil.setPaddingSmart(this,cl_bar)
+        StatusBarUtil.setPaddingSmart(this, cl_bar)
         tv_cancel.setOnClickListener(this)
+        tv_look.setOnClickListener(this)
     }
 
     override fun start() {

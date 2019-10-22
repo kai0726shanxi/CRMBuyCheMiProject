@@ -18,8 +18,12 @@ interface LoginContract {
        * 手机登录
        */
       fun onloginMember(data: UserBean?)
+      fun onFindpsw(data:String?)
+      fun onSendCode(data:String?)
   }
     interface Presenter{
         fun getLoginMember(map:Map<String,String>)
+        fun getFindPsw(map:Map<String,String>)
+        fun getSendCode(map:Map<String,String>)
     }
 }

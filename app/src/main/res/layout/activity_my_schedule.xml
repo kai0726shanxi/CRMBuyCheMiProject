@@ -31,7 +31,7 @@
         app:calendar_content_view_id="@+id/refreshLayout">
 
         <com.haibin.calendarview.CalendarView
-            android:id="@+id/calendarView"
+            android:id="@+id/mCalendarView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff"

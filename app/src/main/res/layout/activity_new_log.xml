@@ -124,13 +124,76 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv2" />
+    <RadioGroup
+      android:id="@+id/radio_grop"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/tv3"
+        app:layout_constraintRight_toRightOf="@+id/tv3"
+        app:layout_constraintTop_toTopOf="@+id/tv3"
+        app:layout_constraintWidth_percent="0.8">
 
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="@android:color/holo_red_light"
+            android:button="@drawable/btn_colcor_selector" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="@android:color/holo_orange_dark"
+            android:button="@drawable/btn_colcor_selector" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="@android:color/holo_blue_light"
+            android:button="@drawable/btn_colcor_selector" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="#FFCC00"
+            android:button="@drawable/btn_colcor_selector" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="#33CCCC"
+            android:button="@drawable/btn_colcor_selector"
+            android:gravity="center" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="#9933FF"
+            android:button="@drawable/btn_colcor_selector" />
+
+        <RadioButton
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="@color/black"
+            android:button="@drawable/btn_colcor_selector" />
+
+
+    </RadioGroup>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycle_img"
         android:layout_width="@dimen/dp_0"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
+        android:paddingBottom="@dimen/dp_15"
         android:background="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

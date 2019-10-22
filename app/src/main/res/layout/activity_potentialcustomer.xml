@@ -16,6 +16,7 @@
         android:layout_marginLeft="@dimen/dp_30"
         android:layout_marginRight="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_5"
+        android:visibility="gone"
         android:background="@drawable/bg_input_gray_shap"
         android:drawableLeft="@mipmap/search_ic"
         android:drawablePadding="@dimen/dp_5"
@@ -36,12 +37,14 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/dp_10"
         android:text="搜索"
+        android:visibility="gone"
         android:textColor="@color/home_bottom_down"
         android:textSize="@dimen/sp_16"
         android:layout_marginRight="@dimen/dp_10"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_bar" />
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
         android:layout_marginTop="@dimen/dp_15"

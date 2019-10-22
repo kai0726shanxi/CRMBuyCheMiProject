@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/home_bg"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.activity.report.NewMemoActivity">
+
+    <include layout="@layout/title_bar_layout" />
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:overScrollMode="never"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_bar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tv_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_35"
+                android:text="该报告于2019-08-02 12:00:00 提交"
+                android:textColor="@color/medynamic"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_tag"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/dp_15"
+                android:text="日报"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_submit" />
+
+            <TextView
+                android:id="@+id/tv_personnel"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:padding="@dimen/dp_15"
+                android:text="提交人员"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_tag" />
+
+            <TextView
+                android:id="@+id/tv_submit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_90"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="8"
+                android:text="张三"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_personnel"
+                app:layout_constraintLeft_toLeftOf="@+id/tv_personnel" />
+
+            <TextView
+                android:id="@+id/tv_submit_position"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="5"
+                android:text="总经理"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_personnel"
+                app:layout_constraintLeft_toRightOf="@+id/tv_submit_name" />
+
+            <TextView
+                android:id="@+id/tv_submit_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLength="11"
+                android:text="18888888888"
+                android:textColor="@color/black_text"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv_personnel"
+                app:layout_constraintLeft_toRightOf="@+id/tv_submit_position" />
+
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_180"
+                android:layout_marginTop="@dimen/dp_15"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请输入内容"
+                android:padding="@dimen/dp_10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_text"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_personnel" />
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle_img"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginTop="@dimen/dp_20"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_content" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_15"
+                android:text="报告类型"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycle_img" />
+
+            <TextView
+                android:id="@+id/tv_type"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/next_ic"
+                android:drawablePadding="@dimen/dp_15"
+                android:gravity="right"
+                android:hint="请选择"
+                android:padding="@dimen/dp_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_text"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                />
+
+            <TextView
+                android:id="@+id/tv3"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingTop="@dimen/dp_15"
+                android:paddingRight="@dimen/dp_10"
+                android:paddingBottom="@dimen/dp_15"
+                android:text="提报时间"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv2" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/next_ic"
+                android:drawablePadding="@dimen/dp_15"
+                android:gravity="right"
+                android:hint="请选择"
+                android:padding="@dimen/dp_15"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black_text"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintBaseline_toBaselineOf="@+id/tv3"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+
+                />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

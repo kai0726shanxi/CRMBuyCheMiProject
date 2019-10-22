@@ -128,15 +128,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.WorkStatementActivity"
+            android:name=".ui.activity.report.WorkStatementActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.activity.NewMemoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".ui.activity.ReportDetailsActivity"
+            android:name=".ui.activity.report.NewMemoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
@@ -165,6 +161,14 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.RetrievePasswordActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.report.ReportDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.schedule.ScheduleDetailsActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
 

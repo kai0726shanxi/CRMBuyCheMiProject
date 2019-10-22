@@ -134,6 +134,8 @@ dependencies {
     implementation 'com.google.android:flexbox:0.3.1'
     implementation project(':multiple-status-view')
     //leakCanary
+    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
     //运行时权限
@@ -145,4 +147,6 @@ dependencies {
     implementation 'com.contrarywind:Android-PickerView:4.1.8'
     implementation files('src/libs/base64-2.3.8.jar')
     implementation 'jp.wasabeef:glide-transformations:3.2.0'
-    implementation 'com.haibin:calendarview:3.6.4'}
+    implementation 'com.haibin:calendarview:3.6.4'
+    implementation 'org.greenrobot:eventbus:3.1.1'
+}

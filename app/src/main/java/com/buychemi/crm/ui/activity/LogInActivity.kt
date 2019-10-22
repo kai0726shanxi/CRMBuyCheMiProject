@@ -19,6 +19,12 @@ import kotlinx.android.synthetic.main.activity_login_layout.*
  * @Date 2019/10/15 15:10
  */
 class LogInActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
+    override fun onFindpsw(data: String?) {
+
+    }
+
+    override fun onSendCode(data: String?) {
+    }
 
     private var map=HashMap<String,String>()
     private val mPresenter: LoginPresenter by lazy { LoginPresenter() }
@@ -46,6 +52,8 @@ class LogInActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
 
     override fun onloginMember(data: UserBean?) {
         SpUtil.putObject(this,Constants.USERBEAN,data)
+        SpUtil.putString(this,Constants.USERBEANTOKEN,data?.token)
+
         val intent=Intent(this,MainActivity::class.java)
          intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
         startActivity(intent)

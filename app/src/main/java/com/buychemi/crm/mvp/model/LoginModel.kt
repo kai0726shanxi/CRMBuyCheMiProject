@@ -24,4 +24,18 @@ class LoginModel {
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }
+    fun getFindPsw(map:Map<String,String>): Observable<BaseResponse<String?>> {
+
+
+        return RetrofitManager.service.getFindPsw(map)
+                .dispatchDefault()
+                .compose(SchedulerUtils.ioToMain())
+    }
+    fun getSendPsw(map:Map<String,String>): Observable<BaseResponse<String?>> {
+
+
+        return RetrofitManager.service.getSendCode(map)
+                .dispatchDefault()
+                .compose(SchedulerUtils.ioToMain())
+    }
 }

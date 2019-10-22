@@ -22,6 +22,7 @@ open class MessageDialog : Dialog {
     private var Ddialogclear:TextView?=null
     private var Ddialogmessage:TextView?=null
     private var Ddialogtitle:TextView?=null
+    private var tv1:TextView?=null
 
 
 
@@ -36,16 +37,23 @@ open class MessageDialog : Dialog {
 
     private fun initView(mcontext: Context) {
         convertView = LayoutInflater.from(mcontext).inflate(R.layout.layout_dialog_view, null, false)
-        Ddialogonfirm=convertView!!.findViewById(R.id.dialog_confirm)
-        Ddialogclear=convertView!!.findViewById(R.id.dialog_cancel)
-        Ddialogmessage= convertView!!.findViewById(R.id.dialog_message)
-        Ddialogtitle= convertView!!.findViewById(R.id.dialog_title)
+        Ddialogonfirm=convertView?.findViewById(R.id.dialog_confirm)
+        Ddialogclear=convertView?.findViewById(R.id.dialog_cancel)
+        Ddialogmessage= convertView?.findViewById(R.id.dialog_message)
+        Ddialogtitle= convertView?.findViewById(R.id.dialog_title)
+        tv1=convertView?.findViewById(R.id.tv1)
 
     }
 
     //设置标题
     fun setTitle(title: String): MessageDialog {
         Ddialogtitle!!.text = title
+        return this
+    }
+
+    //设置发送人数
+    fun setcount(title: String): MessageDialog {
+        tv1?.text = title
         return this
     }
 
