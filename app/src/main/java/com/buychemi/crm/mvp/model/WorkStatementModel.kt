@@ -40,6 +40,14 @@ class WorkStatementModel {
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }
+    /**
+     * 报告详情
+     */
+    fun getReportadd(map: Map<String, String>): Observable<BaseResponse<String?>> {
+        return RetrofitManager.service.getreportadd(map)
+                .dispatchDefault()
+                .compose(SchedulerUtils.ioToMain())
+    }
 
 
 }

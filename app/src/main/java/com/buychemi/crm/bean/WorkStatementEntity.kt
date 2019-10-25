@@ -22,8 +22,9 @@ data class WorkStatementEntity(var id: Int,
                                var updateTime: String?,
                                var docIds: String?,
                                var imgIds: String?,
-                               var doc: List<String>?,
+                               var doc: List<Any>?,
                                var img: ArrayList<UpImagesEntity>?,
                                var auditVoList: List<Any>,
                                var position:String?,
-                               var tel:String?):Serializable
+                               var tel:String?,
+                               var isMe:Int):Serializable

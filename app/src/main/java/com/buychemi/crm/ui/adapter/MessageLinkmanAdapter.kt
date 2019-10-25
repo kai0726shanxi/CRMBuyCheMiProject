@@ -19,7 +19,7 @@ class MessageLinkmanAdapter(context: Context, data: ArrayList<CustomerListEntity
     fun setOnItemListener(onclick: BtnDataLinsenter) {
         this.mOnTitletemClick = onclick
     }
-
+     var list=ArrayList<CustomerListEntity>()
     fun setDataAll(categoryList: ArrayList<CustomerListEntity>) {
         this.mData.addAll(categoryList)
         notifyDataSetChanged()
@@ -35,7 +35,16 @@ class MessageLinkmanAdapter(context: Context, data: ArrayList<CustomerListEntity
         var checkBox = holder.getView<CheckBox>(R.id.iv_next)
 
         checkBox.setOnCheckedChangeListener(null)
+         if (list!=null&&list.size>0){
+         for (item in list){
+             if (item.id==data.id){
+                 data.isChoosed=true
+             }
 
+
+         }
+
+         }
         checkBox.isChecked = data.isChoosed
 
         // 先设置一次CheckBox的选中监听器，传入参数null,防止多次监听错乱

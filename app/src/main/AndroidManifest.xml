@@ -61,7 +61,23 @@
 
             />
         <activity
+            android:name=".ui.activity.MyStaffFindActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+
+            />
+        <activity
+            android:name=".ui.activity.ShowContentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+
+            />
+        <activity
             android:name=".ui.activity.MyGroupActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MyStaffActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity
@@ -129,6 +145,10 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.report.WorkStatementActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.MyCustomerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait" />
         <activity

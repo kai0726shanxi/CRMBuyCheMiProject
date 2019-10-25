@@ -29,11 +29,10 @@
 
         <ImageView
             android:id="@+id/iv_delete"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
             android:layout_marginTop="@dimen/dp_5"
-            android:padding="@dimen/dp_5"
-            android:src="@mipmap/img_delete"
+            android:src="@mipmap/red_delete"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </android.support.constraint.ConstraintLayout>

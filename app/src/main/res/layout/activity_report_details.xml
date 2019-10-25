@@ -4,167 +4,190 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/home_bg"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
     tools:context=".ui.activity.report.NewMemoActivity">
 
     <include layout="@layout/title_bar_layout" />
 
-    <android.support.v4.widget.NestedScrollView
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/refreshLayout"
         android:layout_width="@dimen/dp_0"
         android:layout_height="@dimen/dp_0"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/et_send"
+        android:background="@color/home_bg"
+        app:srlEnableRefresh="false"
+        android:layout_marginBottom="@dimen/dp_10"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cl_bar">
 
-        <android.support.constraint.ConstraintLayout
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dp_35"
-                android:text="该报告于提交"
-                android:textColor="@color/displayt"
-                android:textSize="@dimen/sp_18"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_type"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="@dimen/dp_10"
-                android:text="日志"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_time" />
-
-            <TextView
-                android:id="@+id/tv_user"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/white"
-                android:padding="@dimen/dp_15"
-                android:text="提交员工"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_type" />
-
             <android.support.constraint.ConstraintLayout
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="@dimen/dp_0"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_user"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_user"
-                app:layout_constraintWidth_percent="0.7"
-
-                >
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tv_name"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_time"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:lines="1"
-                    android:padding="@dimen/dp_15"
-                    android:text="张三"
+                    android:padding="@dimen/dp_35"
+                    android:text="该报告于提交"
+                    android:textColor="@color/displayt"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_type"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:padding="@dimen/dp_10"
+                    android:text="日志"
                     android:textColor="@color/black"
                     android:textSize="@dimen/sp_14"
-
-                    />
-
-                <TextView
-                    android:id="@+id/tv_positon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:lines="1"
-                    android:padding="@dimen/dp_15"
-                    android:text=""
-                    android:textColor="@color/black_text"
-                    android:textSize="@dimen/sp_12"
-                    app:layout_constraintLeft_toRightOf="@+id/tv_name" />
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_time" />
 
                 <TextView
-                    android:id="@+id/tv_phone"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tv_user"
+                    android:layout_width="@dimen/dp_0"
                     android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:lines="1"
+                    android:layout_marginTop="@dimen/dp_1"
+                    android:background="@color/white"
                     android:padding="@dimen/dp_15"
-                    android:text=""
-                    android:textColor="@color/black_text"
+                    android:text="提交员工"
+                    android:textColor="@color/black"
                     android:textSize="@dimen/sp_14"
-                    app:layout_constraintLeft_toRightOf="@+id/tv_positon" />
-            </android.support.constraint.ConstraintLayout>
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_type" />
 
-            <TextView
-                android:id="@+id/et_content"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_15"
-                android:background="@color/white"
-                android:gravity="top"
-                android:hint="日报内容"
-                android:minLines="5"
-                android:padding="@dimen/dp_10"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black_text"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_user" />
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_0"
+                    app:layout_constraintBottom_toBottomOf="@+id/tv_user"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/tv_user"
+                    app:layout_constraintWidth_percent="0.7"
+
+                    >
+
+                    <TextView
+                        android:id="@+id/tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_15"
+                        android:text="张三"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_14"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_positon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_15"
+                        android:text=""
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/sp_12"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_name" />
+
+                    <TextView
+                        android:id="@+id/tv_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:padding="@dimen/dp_15"
+                        android:text=""
+                        android:textColor="@color/black_text"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constraintLeft_toRightOf="@+id/tv_positon" />
+                </android.support.constraint.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/et_content"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_15"
+                    android:background="@color/white"
+                    android:gravity="top"
+                    android:hint="日报内容"
+                    android:minLines="5"
+                    android:padding="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black_text"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_user" />
 
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/recycle_img"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_20"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/et_content" />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycle_img"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/et_content" />
 
-            <TextView
-                android:id="@+id/tv_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/dp_10"
-                android:text="备注"
-                android:textColor="@color/black"
-                android:textSize="@dimen/sp_14"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recycle_img" />
-
-            <com.scwang.smartrefresh.layout.SmartRefreshLayout
-                android:id="@+id/refreshLayout"
-                android:layout_width="@dimen/dp_0"
-                android:layout_height="wrap_content"
-                app:srlEnableRefresh="false"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_date">
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_10"
+                    android:text="备注"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recycle_img" />
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyclerView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_date"
+                    app:srlEnableRefresh="false" />
 
-        </android.support.constraint.ConstraintLayout>
-    </android.support.v4.widget.NestedScrollView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v4.widget.NestedScrollView>
 
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <EditText
+        android:id="@+id/et_send"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_60"
+        android:gravity="center_vertical"
+        android:hint="请输入内容"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_text"
+        android:textSize="@dimen/sp_15"
+        android:visibility="gone"
+        android:background="@color/transparent"
+        android:imeOptions="actionSend"
+        android:lines="1"
+        android:singleLine="true"
+        android:padding="@dimen/dp_10"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -10,6 +10,7 @@ import com.buychemi.crm.bean.UserBean
 import com.buychemi.crm.mvp.contract.LoginContract
 import com.buychemi.crm.mvp.presenter.LoginPresenter
 import com.buychemi.crm.showToast
+import com.buychemi.crm.utils.ActivityUtil
 import com.buychemi.crm.utils.SpUtil
 import com.buychemi.crm.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_login_layout.*
@@ -85,7 +86,7 @@ class LogInActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             if (System.currentTimeMillis().minus(mExitTime) <= 2000) {
-                finish()
+                ActivityUtil.getInstance().exitApp()
             } else {
                 mExitTime = System.currentTimeMillis()
                 showToast("再按一次退出程序")

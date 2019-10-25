@@ -10,6 +10,24 @@ import com.buychemi.crm.net.exception.ExceptionHandle
  * @Date 2019/10/18 10:51
  */
 class GroupTabPresenter:BasePresenter<GrouptabContract.View>(),GrouptabContract.Presenter {
+    override fun getAllGroupData(map: Map<String, String>) {
+        checkViewAttached()
+        mRootView?.showLoading()
+
+        val disposable = mModel.getAllGroupData(map)
+                .subscribe({ data ->
+                    mRootView?.apply {
+                        dismissLoading()
+                        onAllGroupData(data.data,data.pageCount)
+                    }
+                }, { throwable ->
+                    mRootView?.apply {
+                        //处理异常
+                        showError(ExceptionHandle.handleException(throwable), ExceptionHandle.errorCode)
+                    }
+                })
+        addSubscription(disposable)    }
+
     override fun getSubordinatelist(map: Map<String, String>) {
 //我下属的分组
         checkViewAttached()

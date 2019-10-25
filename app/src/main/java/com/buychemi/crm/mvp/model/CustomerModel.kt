@@ -21,7 +21,7 @@ class CustomerModel {
     fun getMyGroupList(map:Map<String,String>): Observable<BaseResponse<ArrayList<CustomerListEntity>?>> {
 
 
-        return RetrofitManager.service.getMyCustomerData(map)
+        return RetrofitManager.service.getmyCustomerList(map)
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }
@@ -39,6 +39,15 @@ class CustomerModel {
 
 
         return RetrofitManager.service.getCompanlyDetails(map)
+                .dispatchDefault()
+                .compose(SchedulerUtils.ioToMain())
+    }
+
+    //首页我的联系人列表
+    fun getHomecustimer(map:Map<String,String>): Observable<BaseResponse<ArrayList<CustomerListEntity>?>> {
+
+
+        return RetrofitManager.service.getmyCustomerList(map)
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }

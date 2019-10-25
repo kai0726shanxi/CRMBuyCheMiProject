@@ -36,7 +36,7 @@ class MySchedulePresenter : BasePresenter<MyScheduleContract.View>(), MySchedule
     override fun getMyscheduleList(map: Map<String, String>) {
         checkViewAttached()
         mRootView?.showLoading()
-
+//getManagementList
         val disposable = loginModel.getCalendarList(map)
                 .subscribe({ data ->
                     mRootView?.apply {

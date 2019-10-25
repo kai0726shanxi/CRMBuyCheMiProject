@@ -2,6 +2,7 @@ package com.buychemi.crm.ui.activity.mesage
 
 import android.content.Intent
 import android.view.View
+import com.buychemi.crm.Constants
 import com.buychemi.crm.R
 import com.buychemi.crm.base.BaseActivity
 import com.buychemi.crm.ui.activity.MainActivity
@@ -20,14 +21,17 @@ class MessageSubmintActivity : BaseActivity(), View.OnClickListener {
             R.id.tv_cancel
             -> {
                 var intent = Intent(this, MainActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
                 startActivity(intent)
                 finish()
             }
-
             R.id.tv_look -> {
-                startActivity(Intent(this, MassRecordActivity::class.java))
+                var intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+                intent.putExtra(Constants.KEYTYPE,"LIST")//进入发送记录
+                startActivity(intent)
                 finish()
+
 
             }
 

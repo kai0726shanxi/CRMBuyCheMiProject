@@ -34,4 +34,15 @@ class GroupTabModel {
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }
+
+    /**
+     * 我和我下属的
+     */
+    fun getAllGroupData(map:Map<String,String>): Observable<BaseResponse<ArrayList<GroupListEntity>?>> {
+
+
+        return RetrofitManager.service.getAllGroupData(map)
+                .dispatchDefault()
+                .compose(SchedulerUtils.ioToMain())
+    }
 }

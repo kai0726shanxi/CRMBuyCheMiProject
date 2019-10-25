@@ -1,4 +1,4 @@
-package com.buychemi.crm.ui.activity.report
+package com.buychemi.crm.ui.activity.log
 
 import android.graphics.Color
 import android.support.v7.widget.GridLayoutManager
@@ -23,11 +23,11 @@ import kotlinx.android.synthetic.main.activity_report_details.*
 import kotlinx.android.synthetic.main.title_bar_layout.*
 
 /**
- * 报告详情
+ *日志和跟进详情
  * @Author 20342
  * @Date 2019/10/16 15:00
  */
-class ReportDetailsActivity : BaseActivity(),WorkStatementContract.View, View.OnClickListener {
+class LogDetailsActivity : BaseActivity(),WorkStatementContract.View, View.OnClickListener {
 
     private var mapadd=HashMap<String,String>()
     private var mid:Int=0

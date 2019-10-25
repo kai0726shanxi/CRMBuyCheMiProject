@@ -21,9 +21,11 @@ interface GrouptabContract {
        */
       fun onMyGrouplist(data: ArrayList<GroupListEntity>?,total:Int?)
       fun onSubordinatelist(data: ArrayList<GroupListEntity>?,total:Int?)
+      fun onAllGroupData(data: ArrayList<GroupListEntity>?,total:Int?)
   }
     interface Presenter{
         fun getMyGrouplist(map:Map<String,String>)
         fun getSubordinatelist(map:Map<String,String>)
+        fun getAllGroupData(map:Map<String,String>)
     }
 }

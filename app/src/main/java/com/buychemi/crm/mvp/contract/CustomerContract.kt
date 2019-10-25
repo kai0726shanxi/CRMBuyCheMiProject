@@ -24,10 +24,12 @@ interface CustomerContract {
       fun onMyCustomerlist(data: ArrayList<CustomerListEntity>?, total:Int?)
       fun onCustomerDetails(data: CustomerDetailsEntity?)
       fun onCompanlyDetails(data: CompanyDetailsEntity?)
+      fun onHomeCustomer(data: ArrayList<CustomerListEntity>?, total:Int?)
   }
     interface Presenter{
         fun getMyCustomerlist(map:Map<String,String>)
         fun getCustomerDetails(map:Map<String,String>)
         fun getCompanlyDetails(map:Map<String,String>)
+        fun getHomeCustomer(map:Map<String,String>)
     }
 }

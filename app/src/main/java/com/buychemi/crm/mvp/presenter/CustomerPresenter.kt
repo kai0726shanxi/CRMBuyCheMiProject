@@ -12,6 +12,8 @@ import com.buychemi.crm.net.exception.ExceptionHandle
  * @Date 2019/10/18 10:51
  */
 class CustomerPresenter:BasePresenter<CustomerContract.View>(),CustomerContract.Presenter {
+
+
     override fun getCompanlyDetails(map: Map<String, String>) {
         checkViewAttached()
         mRootView?.showLoading()
@@ -72,4 +74,22 @@ class CustomerPresenter:BasePresenter<CustomerContract.View>(),CustomerContract.
         addSubscription(disposable)
 
     }
+
+    override fun getHomeCustomer(map: Map<String, String>) {
+        checkViewAttached()
+        mRootView?.showLoading()
+
+        val disposable = mModel.getHomecustimer(map)
+                .subscribe({ data ->
+                    mRootView?.apply {
+                        dismissLoading()
+                        onHomeCustomer(data.data,data.pageCount)
+                    }
+                }, { throwable ->
+                    mRootView?.apply {
+                        //处理异常
+                        showError(ExceptionHandle.handleException(throwable), ExceptionHandle.errorCode)
+                    }
+                })
+        addSubscription(disposable)    }
 }

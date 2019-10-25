@@ -16,11 +16,13 @@ interface WorkStatementContract {
         fun onReportList(data: ArrayList<ReportListEntity>?, total: Int?)
         fun onRePortDetails(data: WorkStatementEntity?)
         fun onReportComment(data: ArrayList<ReportCommentEntity>?, total: Int?)
+        fun onreportadd(data: String?)
     }
 
     interface Presenter {
         fun getReportList(map: Map<String, String>)
         fun getRePortDetails(map: Map<String, String>)
         fun getRePortComment(map: Map<String, String>)
+        fun getreportadd(map: Map<String, String>)
     }
 }
