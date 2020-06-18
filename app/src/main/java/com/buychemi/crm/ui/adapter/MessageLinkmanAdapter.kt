@@ -58,8 +58,18 @@ class MessageLinkmanAdapter(context: Context, data: ArrayList<CustomerListEntity
         data?.tel?.let { holder.setText(R.id.tv_phone, it) }
         data?.company?.companyName?.let { holder.setText(R.id.tv_company, it) }
         //客户分级1:重点关注2:持续跟进3:放弃
+        when (data?.resource){
+            1->{
+                holder.setText(R.id.tv_tag, "平台")
 
-        when (data?.customerRating) {
+            }
+            else->{
+                holder.setText(R.id.tv_tag, "非平台")
+
+            }
+        }
+
+      /*  when (data?.customerRating) {
             1 -> {
                 holder.setText(R.id.tv_tag, "重点关注")
             }
@@ -70,7 +80,7 @@ class MessageLinkmanAdapter(context: Context, data: ArrayList<CustomerListEntity
                 holder.setText(R.id.tv_tag, "放弃")
             }
 
-        }
+        }*/
     }
 
     interface BtnDataLinsenter {

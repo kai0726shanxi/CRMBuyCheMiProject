@@ -84,9 +84,17 @@ class ScheduleDetailsActivity : BaseActivity(),MyScheduleContract.View,View.OnCl
         tv_start_time.text=data?.startTime
         tv_end_time.text=data?.endTime
         tv_describe.text=data?.description
-        tv_name.text=data?.associationCustomerName
-        tv_positon.text=data?.associationCustomerPosition
-        tv_company.text=data?.associationCompanyName
+         if (data?.associationCustomerName!=null&&!data?.associationCustomerName.equals("")){
+             tv_user.text="关联客户"
+             tv_name.text=data?.associationCustomerName
+             tv_positon.text=data?.associationCustomerPosition
+             tv_company.text=data?.associationCompanyName
+             tv_phone.text=data?.associationCustomerTel
+         }else{
+             tv_user.text="关联客户 无"
+
+         }
+
         //提醒类型：0准时1提前5分钟2提前10分钟
         when(data?.remindType){
             0->{        et_content.text="提醒         准时"

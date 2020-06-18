@@ -1,5 +1,6 @@
 package com.buychemi.crm.ui.activity
 
+import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
 import android.support.v7.widget.LinearLayoutManager
@@ -11,10 +12,13 @@ import com.buychemi.crm.base.BaseActivity
 import com.buychemi.crm.bean.*
 import com.buychemi.crm.mvp.contract.CustomerContract
 import com.buychemi.crm.mvp.contract.MySubordinateContract
+import com.buychemi.crm.mvp.contract.NewCustomerContract
 import com.buychemi.crm.mvp.presenter.CustomerPresenter
 import com.buychemi.crm.mvp.presenter.MySubordinatePresenter
+import com.buychemi.crm.mvp.presenter.NewCustomerPresenter
 import com.buychemi.crm.showToast
 import com.buychemi.crm.ui.adapter.MyAtaffAdapter
+import com.buychemi.crm.ui.adapter.MyGroupTabAdapter
 import com.buychemi.crm.ui.adapter.MyLinkManTabAdapter
 import com.buychemi.crm.utils.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_home_customer.*
@@ -22,36 +26,20 @@ import kotlinx.android.synthetic.main.title_bar_layout.*
 import org.greenrobot.eventbus.EventBus
 
 /**
- * 我和我下属的列表查询用户
+ * 我的分组(创建时选择的分组)
  * @Author 20342
  * @Date 2019/10/23 16:24
  */
-class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnClickListener {
-    private var mId: Int = 0
-    override fun onFindCustomerList(data: ArrayList<CustomerListEntity>?, total: Int?) {
-        if (total != null) {
-            mTotalPage = total
-        }
-        if (data != null) {
-            if (page == 1) {
-                mMyLinkManTabAdapter?.addDataNew(data)
-            } else {
-                mMyLinkManTabAdapter?.addDataAll(data)
-            }
-        } else {
-            if (page == 1) {
-                mMyLinkManTabAdapter?.addDataNew(ArrayList())
+class ChoseGroupActivity : BaseActivity(), NewCustomerContract.View, View.OnClickListener {
 
-            }
-        }
-    }
 
 
     private var page = 1
     private var mTotalPage = 1
-    private var mMyLinkManTabAdapter: MyLinkManTabAdapter? = null
+    private var mMyGroupTabAdapter: MyGroupTabAdapter? = null
+
     private var issearch = false
-    private val mPresenter: MySubordinatePresenter by lazy { MySubordinatePresenter() }
+    private val mPresenter: NewCustomerPresenter by lazy { NewCustomerPresenter() }
     private var map = HashMap<String, String>()
     override fun onClick(v: View?) {
         when (v?.id) {
@@ -72,7 +60,6 @@ class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnC
     }
 
     override fun initData() {
-        mId = intent.getIntExtra(Constants.KEYTYPE, 0)
     }
 
     override fun initView() {
@@ -83,7 +70,7 @@ class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnC
         tv_search.setOnClickListener(this)
         StatusBarUtil.darkMode(this)
         StatusBarUtil.setPaddingSmart(this, cl_bar)
-        tv_title.text = "我的客户"
+        tv_title.text = "我的分组"
         edit_query.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 //setsendData()
@@ -93,19 +80,18 @@ class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnC
             }
             false
         }
-        mMyLinkManTabAdapter = MyLinkManTabAdapter(this, ArrayList())
-        mMyLinkManTabAdapter?.isshow=false
+        mMyGroupTabAdapter = MyGroupTabAdapter(this, ArrayList())
 
-        mMyLinkManTabAdapter?.setOnTitleItemClickListener { tag, i ->
+        mMyGroupTabAdapter?.setOnTitleItemClickListener { tag, i ->
 
-            var intent = Intent(this, MyClientDetailsActivity::class.java)
-            intent.putExtra(Constants.KEYTYPE, "1")
-            intent.putExtra(Constants.KEYCUSTOMER, tag.id)
-            startActivity(intent)
+            var intent = Intent(this, NewContactActivity::class.java)
+            intent.putExtra(Constants.KEYNAME, tag)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
 
 
         }
-        recycle_view.adapter = mMyLinkManTabAdapter
+        recycle_view.adapter = mMyGroupTabAdapter
         recycle_view.layoutManager = LinearLayoutManager(this)
         refreshLayout.setOnRefreshListener { refreshLayout ->
             //下拉刷新
@@ -134,15 +120,9 @@ class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnC
         map["pageSize"] = "10"
         map["pageNum"] = page.toString()
         if (issearch) {
-
-            map["name"] = edit_query.text.toString().trim()
-            map["userId"] = mId.toString()
-
-        } else {
-            map["userId"] = mId.toString()
-
+            map["groupName"] = edit_query.text.toString().trim()
         }
-        mPresenter.getFindCustomerList(map)
+        mPresenter.getMyGroupData(map)
 
     }
 
@@ -154,11 +134,30 @@ class MyStaffFindActivity : BaseActivity(), MySubordinateContract.View, View.OnC
         ShowErrorMes(errorMsg, errorCode)
     }
 
-    override fun onMySubordinatelist(data: ArrayList<MyStaffEntity>?, total: Int?) {
-
+    override fun onNewAddCustomer(data: LinkTestEntity?) {
 
     }
 
+    override fun oncompanyList(data: ArrayList<CompanyListEntity>?, total: Int) {
+    }
+
+    override fun onMyGroupData(data: ArrayList<GroupListEntity>?, total: Int) {
+        if (total != null) {
+            mTotalPage = total
+        }
+        if (data != null) {
+            if (page == 1) {
+                mMyGroupTabAdapter?.addDataNew(data)
+            } else {
+                mMyGroupTabAdapter?.addDataAll(data)
+            }
+        } else {
+            if (page == 1) {
+                mMyGroupTabAdapter?.addDataNew(ArrayList())
+
+            }
+        }
+    }
     override fun showLoading() {
     }
 

@@ -267,7 +267,7 @@
                 android:drawableRight="@mipmap/next_ic"
                 android:drawablePadding="@dimen/dp_15"
                 android:gravity="right"
-                android:hint="请选择"
+                android:hint="请选择(可选)"
                 android:padding="@dimen/dp_15"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black_text"

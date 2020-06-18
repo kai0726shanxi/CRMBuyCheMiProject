@@ -76,7 +76,7 @@ class MessageLinkmanActivity : BaseActivity(), CustomerContract.View, View.OnCli
         mPresenter.attachView(this)
         iv_left.visibility = View.VISIBLE
         iv_left.setColorFilter(Color.BLACK)
-        tv_title.text = "关联客户"
+        tv_title.text = "选择联系人"
         iv_left.setOnClickListener(this)
         tv_btn.setOnClickListener(this)
         tv_search.setOnClickListener(this)
@@ -149,6 +149,12 @@ class MessageLinkmanActivity : BaseActivity(), CustomerContract.View, View.OnCli
             if (issearch){
                 if (list!=null&&list.size>0){
                  mAdapter?.list=list
+                    if (page == 1) {
+                        mAdapter?.setDataNew(data)
+                    } else {
+                        mAdapter?.setDataAll(data)
+                    }
+                }else{
                     if (page == 1) {
                         mAdapter?.setDataNew(data)
                     } else {

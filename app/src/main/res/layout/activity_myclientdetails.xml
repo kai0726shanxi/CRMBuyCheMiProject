@@ -72,7 +72,7 @@
                          android:textColor="@color/black"
                          app:layout_constraintLeft_toLeftOf="parent"
                          app:layout_constraintRight_toLeftOf="@+id/tv2"
-                         android:text="客户类型\n采购商"
+                         android:text="客户类型\"
                          android:lineSpacingExtra="@dimen/dp_5"
                          android:gravity="center"
 
@@ -87,7 +87,7 @@
                          android:textSize="@dimen/sp_14"
                          android:textColor="@color/black"
                         android:lineSpacingExtra="@dimen/dp_5"
-                        android:text="客户价值\n有效客户"
+                        android:text="客户价值"
                         android:gravity="center"
                         app:layout_constraintRight_toLeftOf="@+id/tv3"
                         app:layout_constraintLeft_toRightOf="@+id/tv1"
@@ -103,7 +103,7 @@
                          android:textColor="@color/black"
                         android:gravity="center"
                         android:lineSpacingExtra="@dimen/dp_5"
-                        android:text="客户分级\n重点关注"
+                        android:text="客户分级"
                         app:layout_constraintRight_toLeftOf="@+id/tv4"
                         app:layout_constraintLeft_toRightOf="@+id/tv2"
                          />
@@ -119,7 +119,7 @@
                         android:lineSpacingExtra="@dimen/dp_5"
                          android:textColor="@color/black"
 
-                        android:text="创建时间\n2019-09-09"
+                        android:text="创建时间"
                         app:layout_constraintLeft_toRightOf="@+id/tv3"
                         app:layout_constraintRight_toRightOf="parent"
                          />

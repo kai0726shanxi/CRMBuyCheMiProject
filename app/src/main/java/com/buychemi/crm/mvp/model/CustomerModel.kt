@@ -21,7 +21,7 @@ class CustomerModel {
     fun getMyGroupList(map:Map<String,String>): Observable<BaseResponse<ArrayList<CustomerListEntity>?>> {
 
 
-        return RetrofitManager.service.getmyCustomerList(map)
+        return RetrofitManager.service.getMyCustomerData(map)
                 .dispatchDefault()
                 .compose(SchedulerUtils.ioToMain())
     }

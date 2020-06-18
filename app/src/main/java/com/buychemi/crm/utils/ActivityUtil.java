@@ -5,10 +5,8 @@ import android.app.ActivityManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.text.TextUtils;
-
 import java.util.List;
 import java.util.Stack;
-
 /**
  * @Author 20342
  * @Date 2019/10/25 12:50

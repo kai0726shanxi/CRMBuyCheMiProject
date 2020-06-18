@@ -1,7 +1,9 @@
 package com.buychemi.crm.ui.activity
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -44,6 +46,10 @@ class MyCustomerActivity : BaseActivity(), CustomerContract.View, View.OnClickLi
                 page = 1
                 setpushData()
             }
+            R.id.tv_right->{
+
+                startActivity(Intent(this,NewContactActivity::class.java))
+            }
         }
     }
 
@@ -62,7 +68,11 @@ class MyCustomerActivity : BaseActivity(), CustomerContract.View, View.OnClickLi
         tv_search.setOnClickListener(this)
         StatusBarUtil.darkMode(this)
         StatusBarUtil.setPaddingSmart(this, cl_bar)
-        tv_title.text = "我的联系人"
+        tv_title.text = "我的客户"
+        tv_right.visibility=View.VISIBLE
+        tv_right.text="新建"
+        tv_right.setOnClickListener(this)
+        tv_right.setTextColor(ContextCompat.getColor(this, R.color.home_bottom_down))
         edit_query.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                 //setsendData()
@@ -120,7 +130,14 @@ class MyCustomerActivity : BaseActivity(), CustomerContract.View, View.OnClickLi
     }
 
     override fun start() {
+    }
+
+    override fun onStart() {
+        super.onStart()
+        issearch=false
+        page=1
         setpushData()
+
     }
 
     override fun showError(errorMsg: String, errorCode: Int) {

@@ -39,7 +39,7 @@ class ChoseSexDialog : Dialog,View.OnClickListener {
     private var convertView: View? = null
 
     private fun initView(mcontext: Context) {
-        convertView = LayoutInflater.from(mcontext).inflate(R.layout.layout_dialog_chosesex, null, false)
+        convertView = LayoutInflater.from(mcontext).inflate(R.layout.layout_chosesex, null, false)
         mRadioGroup = convertView!!.findViewById(R.id.radiogrop)
         mRadioButton1 = convertView!!.findViewById(R.id.rb1)
         mRadioButton2 = convertView!!.findViewById(R.id.rb2)

@@ -22,7 +22,7 @@
        android:layout_height="wrap_content"
        android:textColor="@color/black_text"
        android:textSize="@dimen/sp_12"
-       android:text="总经理"
+       android:text=""
        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name"
        app:layout_constraintLeft_toRightOf="@+id/tv_name"
        android:layout_marginLeft="@dimen/dp_15"/>
@@ -35,7 +35,7 @@
        android:layout_marginTop="@dimen/dp_10"
        android:textSize="@dimen/sp_14"
        android:textColor="@color/black_text"
-       android:text="188888888888"/>
+       android:text=""/>
 
    <View
        android:layout_width="@dimen/dp_0"
