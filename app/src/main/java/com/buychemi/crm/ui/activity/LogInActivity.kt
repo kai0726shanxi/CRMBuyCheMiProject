@@ -1,7 +1,9 @@
 package com.buychemi.crm.ui.activity
 
 import android.content.Intent
+import android.text.TextUtils
 import android.view.KeyEvent
+import android.view.TextureView
 import android.view.View
 import com.buychemi.crm.Constants
 import com.buychemi.crm.R
@@ -13,6 +15,7 @@ import com.buychemi.crm.showToast
 import com.buychemi.crm.utils.ActivityUtil
 import com.buychemi.crm.utils.SpUtil
 import com.buychemi.crm.utils.StatusBarUtil
+import com.luck.picture.lib.tools.ToastManage
 import kotlinx.android.synthetic.main.activity_login_layout.*
 
 /**
@@ -73,6 +76,12 @@ class LogInActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
             }
 
             R.id.tv_login -> {
+
+            if(TextUtils.isEmpty(et_phone.text.toString().trim())|| TextUtils.isEmpty(et_psw.text.toString().trim())){
+                showToast("用户名或密码不能为空")
+                return
+            }
+
              map.clear()
              map["telPhone"]=et_phone.text.toString().trim()
              map["pwd"]=et_psw.text.toString().trim()
