@@ -11,7 +11,7 @@ android {
         config {
             keyAlias 'key0'
             keyPassword 'k123456'
-            storeFile file('../kchat.jks')
+            storeFile file('../crm.jks')
             storePassword 'k123456'
         }
     }

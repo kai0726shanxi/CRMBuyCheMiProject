@@ -1,6 +1,7 @@
 package com.buychemi.crm.ui.activity
 
 import android.content.Intent
+import android.graphics.Color
 import android.text.TextUtils
 import android.view.KeyEvent
 import android.view.TextureView
@@ -17,6 +18,10 @@ import com.buychemi.crm.utils.SpUtil
 import com.buychemi.crm.utils.StatusBarUtil
 import com.luck.picture.lib.tools.ToastManage
 import kotlinx.android.synthetic.main.activity_login_layout.*
+import android.view.WindowManager
+import android.os.Build
+
+
 
 /**
  * @Author 20342
@@ -53,6 +58,7 @@ class LogInActivity : BaseActivity(), View.OnClickListener, LoginContract.View {
     override fun showError(errorMsg: String, errorCode: Int) {
         ShowErrorMes(errorMsg, errorCode)
     }
+
 
     override fun onloginMember(data: UserBean?) {
         SpUtil.putObject(this,Constants.USERBEAN,data)
